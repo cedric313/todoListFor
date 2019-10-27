@@ -1,0 +1,14 @@
+<div>
+  <p style="text-align: center; font-size: 4em"> Todo List</p>
+  <input [(ngModel)]="inputDataTitle" style="text-align: center" placeholder="Titre de votre tâche" required>
+  <input [(ngModel)]="inputDataDescription" style="text-align: center" placeholder="Décrivez votre tâche">
+  <input [(ngModel)]="inputDataState" style="text-align: center" placeholder="Fait ou à faire?" required>
+  <button (click)="add()" type="submit"> ajouter une tache à la liste</button>
+
+  <ul *ngFor="let listTodo of listTodo; index as i;">
+    <li>
+      {{listTodo.title}}: {{listTodo.description}}
+    </li>
+  </ul>
+</div>
+
