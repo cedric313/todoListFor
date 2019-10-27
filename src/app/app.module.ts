@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoComponent } from './todo/todo.component';
 import {MatListModule} from "@angular/material/list";
 import {MatInputModule} from "@angular/material/input";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {MatInputModule} from "@angular/material/input";
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatListModule,
-    MatInputModule
+    MatInputModule,
+    MatCheckboxModule
 
 
   ],

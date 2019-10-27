@@ -11,6 +11,7 @@ export class TodoComponent implements OnInit {
   private inputDataTitle;
   private inputDataDescription;
   private inputDataState;
+  checked: any;
 
   constructor() {
 
@@ -18,12 +19,21 @@ export class TodoComponent implements OnInit {
 
   ngOnInit() {
     this.listTodo.push(
-      {'title': 'courses', 'description': 'je dois acheter du pain', 'state': 'à faire'},
-      {'title': 'ranger', 'description': 'je dois passer l\'aspirateur', 'state': 'à faire'});
+      {'title': 'courses', 'description': 'je dois acheter du pain', 'state': false},
+      {'title': 'ranger', 'description': 'je dois passer l\'aspirateur', 'state': false});
+
   }
 
   add() {
     this.listTodo.push(new Todo(this.inputDataTitle, this.inputDataDescription, this.inputDataState));
   }
 
+  checkAndSort(i) {
+  let longueur = this.listTodo.length;
+    let objectListTodo = this.listTodo[i];
+    if(!objectListTodo.state){
+      this.listTodo[longueur] = this.listTodo[i];
+      this.listTodo.splice(i,1);
+    }
+  }
 }

@@ -1,14 +1,15 @@
-<div>
+<div class="boxes">
   <p style="text-align: center; font-size: 4em"> Todo List</p>
   <input [(ngModel)]="inputDataTitle" style="text-align: center" placeholder="Titre de votre tâche" required>
   <input [(ngModel)]="inputDataDescription" style="text-align: center" placeholder="Décrivez votre tâche">
-  <input [(ngModel)]="inputDataState" style="text-align: center" placeholder="Fait ou à faire?" required>
   <button (click)="add()" type="submit"> ajouter une tache à la liste</button>
 
-  <ul *ngFor="let listTodo of listTodo; index as i;">
-    <li>
-      {{listTodo.title}}: {{listTodo.description}}
-    </li>
+  <ul *ngFor="let listTodo of listTodo; index as i;" style="padding-top: 1em ; align-items: center">
+      <div class="list-group-item">
+      <input type="checkbox" [(ngModel)]="listTodo.state" (click)="checkAndSort(i)">
+      <div *ngIf="listTodo.state" class="maclasse">Terminée : {{listTodo.title}}: {{listTodo.description}} </div>
+      <div *ngIf="!listTodo.state">A faire : {{listTodo.title}}: {{listTodo.description}} </div>
+      </div>
   </ul>
 </div>
 
