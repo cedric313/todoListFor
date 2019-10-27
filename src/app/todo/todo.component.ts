@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Todo} from "./Todo";
+import {RouterModule} from "@angular/router";
 
 @Component({
   selector: 'app-todo',
@@ -11,7 +12,6 @@ export class TodoComponent implements OnInit {
   private inputDataTitle;
   private inputDataDescription;
   private inputDataState;
-  checked: any;
 
   constructor() {
 
@@ -35,5 +35,10 @@ export class TodoComponent implements OnInit {
       this.listTodo[longueur] = this.listTodo[i];
       this.listTodo.splice(i,1);
     }
+  }
+
+
+  changeRoute(i) {
+
   }
 }

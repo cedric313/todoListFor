@@ -2,8 +2,8 @@
   <p style="text-align: center; font-size: 4em"> Todo List</p>
   <div class="form-group" style="padding-left: 3em">
   <input [(ngModel)]="inputDataTitle" style="text-align: center" placeholder="Titre de votre tâche" required>
-  <input [(ngModel)]="inputDataDescription" style="text-align: center" placeholder="Décrivez votre tâche">
-  <button (click)="add()" type="submit"> ajouter une tache à la liste</button>
+  <input [(ngModel)]="inputDataDescription" style="text-align: center" placeholder="Décrivez votre tâche" required>
+  <button *ngIf="inputDataTitle && inputDataDescription" (click)="add()" type="submit"> ajouter une tache à la liste</button>
   </div>
   <ul *ngFor="let listTodo of listTodo; index as i;" style="padding-top: 1em ; align-items: center">
       <div class="list-group-item">
